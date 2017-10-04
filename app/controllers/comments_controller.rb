@@ -25,18 +25,14 @@ class CommentsController < ApplicationController
   #Create
   def create
 
-    # @post = Post.find(params[:post_id])
-    # @comment = @post.comments.create(comment_params)
-    # if @comment.save
-    #   redirect_to @post_comment_path
-    # else
-    #   render :new
-    # end
-    
-    post = Post.find(params[:post_id])
-    post.comments.create(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params)
+    if @comment.save
+      redirect_to @post
+    else
+      render :new
+    end
 
-    redirect_to post
   end
 
 
@@ -50,19 +46,14 @@ class CommentsController < ApplicationController
   #Update
   def update
     
-    # @post = Post.find(params[:id])
-    # @comment = @post.comments.create(comment_params)
-    # if @comment.update(comment_params)
-    #   redirect_to @post_comment_path
-    # else
-    #   render :edit
-    # end
+    @post = Post.find(params[:id])
+    @comment = @post.comments.create(comment_params)
+    if @comment.update(comment_params)
+      redirect_to @post
+    else
+      render :edit
+    end
 
-    post = Post.find(params[:post_id])
-    comment = post.comments.find(params[:id])
-    comment.update(comment_params)
-
-    redirect_to post_comment_path
   end
 
 
