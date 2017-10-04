@@ -1,0 +1,9 @@
+<p>Title: <%= post.title %></p>
+<p>Name: <%= post.name %></p>
+<p>Body: <%= post.blog %></p>
+
+<%= link_to "Show Page", post if action_name == "index" %> |
+<%= link_to "Edit Page", edit_post_path(post) %>
+
+<br>
+--------------------------------------
