@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
 
 	validates :comment, presence: :true
 
-	validates :comment, length: { minimum: 4, maximum: 1000, message: "You must enter a valid comment. Total characters - 1000" }
+	validates :comment, length: { maximum: 250, message: "You must enter a valid comment. Total characters - 250" }
 
 end
