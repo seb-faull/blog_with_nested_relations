@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   #Create
   def create
-    new_post = Post.create(post)
+    new_post = Post.create(post_params)
     new_post.save
 
     redirect_to new_post
